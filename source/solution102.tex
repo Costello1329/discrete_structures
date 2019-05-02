@@ -1,0 +1,32 @@
+\begin{task}{102}
+Решите сравнение $71x\equiv 12\pmod{269}$. Для решения задачи нахождения обратного по умножению элемента продемонстрируйте применение алгоритма Евклида. Перебор/угадывание не допускаются.
+\end{task}
+
+\begin{solution}
+Для начала, запишем общий вид уравнения: $ax\equiv b\pmod{m}$. В нашем случае: $a = 71 ,\, b = 12 ,\, m = 269$. Найдем $d = \operatorname{gcd}(a, m)$:
+\begin{align*}
+    269 = 3\cdot71 + 56;\\
+    71 = 1\cdot56 + 15;\\
+    56 = 3\cdot15 + 11;\\
+    15 = 1\cdot11 + 4;\\
+    11 = 2\cdot4 + 3;\\
+    4 = 1\cdot3 + 1;\\
+    3 = 3\cdot1 + 0;\\
+    1 = 1\cdot1 + 0;\\
+    d = \operatorname{gcd}(71, 269) = 1.
+\end{align*}
+\par
+Используя обратный проход (аналог РАЕ):
+\begin{gather*}
+1 = 4 - 1\cdot\uline{3} = \\
+1\cdot\uline{4} - 1\cdot(11 - 2\cdot\uline{4}) = -11 + 3\cdot\uline{4} = \\
+-1\cdot\uline{11} + 3\cdot(15 - 1\cdot\uline{11}) = 3\cdot15 - 4\cdot\uline{11} = \\
+3\cdot\uline{15} - 4\cdot(56 - 3\cdot\uline{15}) = -4\cdot56 + 15\cdot\uline{15} = \\
+-4\cdot\uline{56} + 15\cdot(71 - 1\cdot\uline{56}) = 15\cdot71 - 19\cdot\uline{56} = \\
+15\cdot\uline{71} - 19\cdot(269 - 3\cdot\uline{71}) = -19\cdot269 + 72\cdot\uline{71} \equiv \\
+72\cdot\uline{71} \pmod{269}.
+\end{gather*}\par
+Значит, обратный по модулю $269$ к $71$ элемент - $72$.\par
+Имеем $x_0 = 12*71^{-1}=12*72\equiv 57 \pmod{269}$\par
+Ответ: $x = 57 + 269k$, где $k \in \mathbb{N}$.
+\end{solution}
