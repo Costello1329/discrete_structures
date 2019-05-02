@@ -1,0 +1,30 @@
+\begin{task}{327}
+Вычислите в $\mathbb{Z}_7$ значение выражения
+\[\left(2017^{-1}+2018^{−1}\right)^{2018}\cdot2018.\] Ответ должен принадлежать множеству $\{0,1,2,3,4,5,6\}$.
+\end{task}
+
+\begin{solution}
+
+
+ Найдем обратный элемент к 2017 в $\mathbb{Z}_7$:
+ \begin{gather*}
+ 2017 = 288\cdot7 + 1;
+ 1 = 2017 - 288\cdot7;
+ 2017^{-1} \equiv 1 \pmod{7}.
+ \end{gather*}\par
+ 
+ Найдем обратный элемент к 2018 в $\mathbb{Z}_7$:
+ \begin{center}
+ $2018 = 288\cdot7 + 2$\newline
+ $1 = 7 - 2\cdot3 \equiv 7 + (2016 - 2018)\cdot3 $\newline
+ $2018^{-1} \equiv 4 \pmod{7}$\newline
+ \end{center}\par
+ 
+ Теперь:
+ \begin{gather*}
+ (1 + 4)^{2018} = 5^{2\cdot1009} = 25^{1009} \equiv 4^{16\cdot63 + 1} \equiv 4\cdot(4^{16})^{63} \equiv \\ 4\cdot4^{63} = 4 \cdot 4^{31\cdot2 + 1} \equiv 2\cdot2^{31} =\\ 2^{32} = 4^{16} \equiv 2^{8} = 4^4 = 16^2 \equiv 2^2 \equiv 4 \pmod{7}
+ \end{gather*}\par
+ 
+ Наконец:
+ $4\cdot 2018 = 8072 \equiv 1 \pmod{7}$.
+\end{solution}
