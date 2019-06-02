@@ -17,7 +17,7 @@
         cf = 1.
     \end{cases}
 \end{equation*}
-Докажем, что данная система не имеет решений для натуральных чисел $a, b, c, d, e, f$.\par
+Докажем, что данная система не имеет решений для элементов $a, b, c, d, e, f$ поля $\mathbb{Z}_3$.\par
 Из первого уравнения: $a = \frac{1}{d}$. Подставим в систему:
 \begin{equation*}
     \begin{cases}
@@ -27,22 +27,30 @@
         cf = 1.
     \end{cases}
 \end{equation*}
-Из четвертого уравнения: $c = \frac{1}{f}$. Из третьего: $b = -\frac{ce}{f} = -\frac{e}{f^2}$ Подставим в систему:
+Из четвертого уравнения: $c = \frac{1}{f}$. Из третьего: $b = -\frac{ce}{f} = -\frac{e}{f^2}$. Подставим в систему:
 \begin{equation*}
     \begin{cases}
-        \frac{e}{d} - \frac{e}{f^2} = 1;\\
-        \frac{f}{d} - \frac{e}{f^2} + \frac{d}{f} = 1.
+        \frac{e}{d} - \frac{ed}{f^2} = 1;\\
+        \frac{f}{d} - \frac{e^2}{f^2} + \frac{d}{f} = 1.
     \end{cases}
 \end{equation*}
-Из певрого уравнения: $e = \frac{f^2d}{f^2 - d}$. Подставим в систему:
+Из певрого уравнения: $e = \frac{df^2}{f^2 - d^2}$. Подставим в систему:
 \begin{equation*}
-     \frac{f}{d} - \frac{f^4d^2}{(d^2-d)^2} + \frac{d}{f} = 1.
+     \frac{f^2+d^2}{fd} - \left(\frac{fd}{f^2-d^2}\right)^2 = 1.
 \end{equation*}
 Упростим:
 \begin{equation*}
-     (f^2 - df +d^2)(f^2 - d)^2 = f^5d^3\\.
+     (f^4 - d^4 - f^3d + fd^3)(f^2 - d^2) = f^3d^3\\.
 \end{equation*}
-Это уравнение не имеет решений в натуральных числах.
+Заметим сразу, что $d \neq 0$ и $f \neq 0$, 
+Это уравнение не имеет решений в рассматриваемом поле (переберем 4 варианта):
+    \begin{enumerate}
+        \item $d = 1$, $f = 1$:\quad $0 = 1$ --- неверно;\\
+        \item $d = 1$, $f = -1$:\quad $0 = -1$ --- неверно;\\
+        \item $d = -1$, $f = 1$:\quad $0 \neq -1$ --- неверно;\\
+        \item $d = -1$, $f = -1$:\quad $0 \neq 1$ --- неверно.\\
+    \end{enumerate}
+
 \end{enumerate}
-\par Значит исходный многочлен неприводим.
+\par Значит, исходный многочлен неприводим.
 \end{solution}

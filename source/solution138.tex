@@ -1,0 +1,56 @@
+\begin{task}{138}
+Найдите хотя бы один первообразный корень по модулю $11^{1000}$.
+\end{task}
+
+\begin{solution}
+Для начала, запишем определение первообразного корня $g$ по модулю $m$:
+\begin{equation*}
+    \forall a \in \mathbb{Z} \ \text{т.ч.} \operatorname{gcd}(a, m) = 1 \ \exists k \in \mathbb{Z} : g^{k} \equiv a \pmod{m}.
+\end{equation*}
+Вспомним, что можно воспользоваться следующим утверждением:
+
+\begin{theorem} \label{(g+mx)^(m-1)_prim_roots}
+Если $g$ --- первообразный корень по простому модулю $m$, то $\exists \ x \ \forall \alpha \geq 1 : g+m\cdot x$ --- первообразный корень по модулю $m^\alpha$. Подходят именно $x$, такие, что: ${\left( g+m\cdot x \right)}^{m - 1} = 1 + m \cdot y$, где $\operatorname{gcd}(y, m) = 1$.
+\end{theorem}
+
+Чтобы воспользоваться этой теоремой \ref{(g+mx)^(m-1)_prim_roots} --- найдем сначала первообразный корень по модулю 11. Докажем, что $2$ --- первообразный корень по модулю 11, перебрав все $a \in \{1,2,3,4,5,6,7,8,9,10\}$:
+\begin{enumerate}
+    \item $a = 1$: \\
+    возьмем $k = 10$:  $2^{10} = 1024 \equiv 1 \pmod{11};$
+    \item $a = 2$: \\
+    возьмем $k = 1$:  $2^1 = 2 \equiv 2 \pmod{11};$
+    \item $a = 3$: \\
+    возьмем $k = 8$:  $2^8 = 256 \equiv 3 \pmod{11};$
+    \item $a = 4$: \\
+    возьмем $k = 2$:  $2^2 = 4 \equiv 4 \pmod{11};$
+    \item $a = 5$: \\
+    возьмем $k = 4$:  $2^4 = 16 \equiv 5 \pmod{11};$
+    \item $a = 6$: \\
+    возьмем $k = 9$:  $2^9 = 512 \equiv 6 \pmod{11};$
+    \item $a = 7$: \\
+    возьмем $k = 7$:  $2^7 = 128 \equiv 7 \pmod{11};$
+    \item $a = 8$: \\
+    возьмем $k = 3$:  $2^3 = 8 \equiv 8 \pmod{11};$
+    \item $a = 9$: \\
+    возьмем $k = 6$:  $2^6 = 64 \equiv 9 \pmod{11};$
+    \item $a = 10$: \\
+    возьмем $k = 5$:  $2^5 = 32 \equiv 10 \pmod{11}.$
+\end{enumerate}
+
+Теперь можно воспользоваться теоремой~\ref{(g+mx)^(m-1)_prim_roots}:
+\begin{equation*}
+    {\left( 2 + 11\cdot x \right)}^{10} = 1 + 11\cdot y, \text{ при} \operatorname{gcd}(y, 11) = 1.
+\end{equation*} \par
+Подставив $x = 0$, получим:
+\begin{equation*}
+    {\left( 2 + 11\cdot 0 \right)}^{10} = 1024 = 1 + 11\cdot 93.
+\end{equation*} \par
+Значит, $y = 93$. Осталось проверить, что $\operatorname{gcd}(93, 11) = 1$:
+\begin{align*}
+    93 = 8\cdot11 + 5;\\
+    11 = 2\cdot5 + 1;\\
+    5 = 5\cdot1 + 0;\\
+    \operatorname{gcd}(93, 11) = 1.
+\end{align*}
+Получается, действительно, $g = 2$ --- первообразный корень по модулю $11^{1000}$.
+\end{solution}

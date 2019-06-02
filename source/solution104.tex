@@ -3,5 +3,18 @@
 \end{task}
 
 \begin{solution}
-Да: $k = 500002$. Это можно понять, решив сравнение $13^k \equiv 169 \mod{10^7}$. Такое сравнение решается с помощью дискретного логарифмирования, и ответ точно существует, так как $gcd(13, 10) = 1$.
+Да: $k = 4000002$. Это можно понять, решив сравнение $13^{k-2} \equiv 1 \pmod{10^7}$. Оно эквивалентно исходному, так как $\operatorname{gcd}(13, 10) = 1$.\par
+По теореме Эйлера:
+\begin{equation*}
+    13^{\varphi(m)}\equiv 1 \pmod{10^7}.
+\end{equation*}
+Вычислим $\varphi(m)$:
+\begin{gather*}
+    \varphi(m) = \varphi(2^7\cdot5^7) = m\cdot\left(1-\frac{1}{2} \right) \cdot\left(1-\frac{1}{5} \right)=4\cdot10^6.
+\end{gather*}
+Таким образом:
+\begin{equation*}
+    k - 2 = 4\cdot10^6.
+\end{equation*}
+Отсюда, $k = 4000002$ нам подходит.
 \end{solution}

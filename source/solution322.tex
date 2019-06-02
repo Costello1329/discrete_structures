@@ -9,5 +9,9 @@ $n$ — произвольное натуральное число. Пусть $
 P(H_1 \cap H_2 \cap \dots \cap H_{n^{2017}}) = 1 - P(\overline{H_1 \cap H_2 \cap \dots \cap S_{n^{2017}}}) =\\ 1 - P(\overline{H_1} \cup \overline{H_2} \cup \dots \cup \overline{H_{n^{2017}}}) \geq 1 - \sum\limits_{i=1}^{{n}^{2017}} P(\overline{H_i}).
 \end{multline*}
 $Событие \overline{H_i}$ соответствует одноцветности множества $S_i$. 
-\[P(\overline{H_i}) = 2\cdot(1/2)^n = 2^{(1-n)}.\]
-Получим $P(H_1 \cap H_2 \cap \dots \cap H_{n^{2017}}) \geq 1 - \sum\limits_{i=1}^{{n}^{2017}} 2^{1-n}$. При достаточно больших $n$ выражение положительно, значит требуемая раскраска возможна.\end{solution}
+\[P(\overline{H_i}) = 2\cdot(1/2)^n = 2^{1-n}.\]
+Получим:
+\begin{gather*}
+P(H_1 \cap H_2 \cap \dots \cap H_{n^{2017}}) \geq 1 - \sum\limits_{i=1}^{{n}^{2017}} 2^{1-n} = 1-n^{2017}\cdot2^{1-n} = 1 - \frac{n^{2017}}{2^{n - 1}}.
+\end{gather*}
+При достаточно больших $n$ выражение положительно, так как экспонента в знаменателе растет быстрее, чем многочлен в числителе. Значит, требуемая раскраска возможна.\end{solution}

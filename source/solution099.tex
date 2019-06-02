@@ -12,27 +12,28 @@
     d = \operatorname{gcd}(52, 404) = 4.\newline
 \end{align*}
 \par
-Исходное уравнение упрощается до $ax/d\equiv b/d\pmod{m}/d$, если $d\mathop{|}b$.
+Исходное уравнение упрощается до $ax/d\equiv b/d\pmod{m/d}$, если $d\mathop{|}b$.
 В нашем случае $48/4 = 12$. Получаем: $13x\equiv 12 \pmod{101}$.
 \par
 \begin{align*}
     101 = 7\cdot13 + 10;\\
     13 = 1\cdot10 + 3;\\
     10 = 3\cdot3 + 1;\\
-    3 = 3\cdot1 + 0;\\
-    1 = 1\cdot1 + 0.
+    3 = 3\cdot1 + 0.
 \end{align*}\par
 Используя обратный проход (аналог РАЕ):
 \begin{gather*}
 1 = 10 - 3\cdot\uline{3} = \\
 1\cdot\uline{10} - 3\cdot(13 - 1\cdot\uline{10}) = -3\cdot13 + 4\cdot\uline{10} = \\
--3\cdot\uline{13} + 4\cdot(101 - 7\cdot\uline{13}) = 4\cdot101 + -31\cdot\uline{13} \equiv \\
+-3\cdot\uline{13} + 4\cdot(101 - 7\cdot\uline{13}) = 4\cdot101 + (-31\cdot\uline{13}) \equiv \\
 70\cdot\uline{13} \pmod{101}.
 \end{gather*}\par
-Значит, обратный по модулю 101 к $13$ элемент - $70$.\par
-Имеем $x_0 = 12*13^{-1}=12*70\equiv 32 \pmod{101}$\par
+Значит, обратный по модулю 101 к $13$ элемент --- $70$.\par
+Имеем $x_0 = 12\cdot13^{-1}=12\cdot70\equiv 32 \pmod{101}$.\par
 \par
-С учетом того, что исходное уравнение нужно решить по модулю $404$:\newline
-$x \equiv x_0 + 101 \cdot k \pmod{404} ,\, k \in {0, 1, \dots, d - 1}$.\newline
-$x \equiv {32, 133, 234, 335} \pmod{404}$.
+С учетом того, что исходное уравнение нужно решить по модулю $404$:
+\begin{gather*}
+x \equiv x_0 + 101 \cdot k \pmod{404} ,\, k \in \{0, 1, \dots, d - 1\};\\
+x \equiv {32, 133, 234, 335} \pmod{404}.
+\end{gather*}
 \end{solution}
